@@ -2,7 +2,13 @@ import { Component } from "react"
 import { nanoid } from "nanoid"
 import PropTypes from 'prop-types';
 import styles from './ContactForm.module.css'
+
 export class ContactForm extends Component {
+
+    static propTypes = {
+        onSubmit: PropTypes.func.isRequired
+    }
+
     state= {
         name: '',
         number: '',
@@ -68,8 +74,4 @@ export class ContactForm extends Component {
             <button type="submit" className={styles.submitButton}>Add contact</button>
         </form>)
     }
-}
-
-ContactForm.propTypes = {
-    onSubmit: PropTypes.func.isRequired
 }
